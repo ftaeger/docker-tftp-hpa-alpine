@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  server:
+    image: ftaeger/tftp-hpa-alpine
+    ports:
+      - "69:69/udp"
+    volumes:
+      - /docker/tftp-hpa/tftpboot:/var/tftpboot:ro
+    restart: unless-stopped
